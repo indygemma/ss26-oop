@@ -8,7 +8,7 @@ class Person {
   // attributen
 private:
   std::string name;
-  int alter;
+  int *alter;
   int groesse;
 
 public:
@@ -16,6 +16,7 @@ public:
 
   // Konstruktor = Klassename = Funktionsname
   Person(std::string name, int alter, int groesse);
+  ~Person();
   void setAlter(int x);
   void introduce() const;
 };
