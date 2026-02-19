@@ -52,6 +52,24 @@ Person &Person::operator=(const Person &other) {
   return *this;
 }
 
+Person &Person::operator=(Person &&other) {
+  std::cout << "Move Assignment called! " << std::endl;
+  if (this != &other) {
+    std::cout << "this != &other for move assignment " << std::endl;
+
+    // guarantee that this != other
+    // 1. Aufgabe: move ALL attributes from other (reuse existing heap-allocated
+    // memory)
+
+    this->name = other.name;
+    this->alter = other.alter;
+    this->groesse = other.groesse;
+
+    other.alter = nullptr;
+  }
+  return *this;
+}
+
 void Person::setAlter(int x) {
   // validierung
   if (x < 0) {
@@ -72,6 +90,6 @@ int Person::getGroesse() const { return this->groesse; }
 
 void Person::introduce() const {
   cout << "Name: " << name << endl;
-  cout << "Alter: " << alter << endl;
+  cout << "Alter: " << *alter << endl;
   cout << "Groesse: " << groesse << endl;
 }

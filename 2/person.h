@@ -21,6 +21,7 @@ public:
   ~Person();
 
   Person &operator=(const Person &other); // Copy Assignment operator=
+  Person &operator=(Person &&other);
 
   void setAlter(int x);
   int getAlter() const;
