@@ -21,6 +21,15 @@ Person::Person(string name, int alter, int groesse)
   }
 }
 
+Person::Person(const Person &other) {
+  // 1. Aufgabe: initialization of attributes
+  // 2. Aufgabe: copy values from other
+
+  this->name = other.name;
+  this->alter = new int(*other.alter);
+  this->groesse = other.groesse;
+}
+
 Person::~Person() {
   // this->name
   delete this->alter;
@@ -37,6 +46,13 @@ void Person::setAlter(int x) {
   // dereferencing required, because of int*
   *this->alter = x;
 }
+
+int Person::getAlter() const {
+  // dereference
+  return *this->alter;
+}
+
+int Person::getGroesse() const { return this->groesse; }
 
 void Person::introduce() const {
   cout << "Name: " << name << endl;

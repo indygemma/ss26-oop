@@ -12,6 +12,8 @@ int main() {
   p1->setAlter(-100);
   p1->introduce();
 
+  Person p2 = Person(*p1); // Copy Constructor required
+
   delete p1; // destructor call
 
   // p1.alter = 10;

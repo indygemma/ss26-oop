@@ -16,8 +16,12 @@ public:
 
   // Konstruktor = Klassename = Funktionsname
   Person(std::string name, int alter, int groesse);
+  Person(const Person &other); // Copy Constructor
+
   ~Person();
   void setAlter(int x);
+  int getAlter() const;
+  int getGroesse() const;
   void introduce() const;
 };
 
