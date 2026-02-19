@@ -43,8 +43,15 @@ int main() {
 
   std::cout << "P5 introduces himself: " << std::endl;
   p5.introduce();
-  std::cout << "P2 introduces herself: " << std::endl;
-  p2.introduce();
+
+  // std::cout << "P2 introduces herself: " << std::endl;
+  // p2.introduce();
+
+  // Operator overloading: operator+ (Has bug for now)
+  Person p6 = Person("Something", 20, 160);
+  p6 = *p1 + p5;
+  std::cout << "P6 introduces himself/herself: " << std::endl;
+  p6.introduce();
 
   // p1.alter = 10;
   // p1.alter = -100;

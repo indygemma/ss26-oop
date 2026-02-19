@@ -27,6 +27,9 @@ public:
   int getAlter() const;
   int getGroesse() const;
   void introduce() const;
+
+  Person operator+(
+      const Person &other); // operator overloading: operator+ (Person + Person)
 };
 
 #endif

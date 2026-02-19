@@ -8,7 +8,7 @@ Person::Person(string name, int alter, int groesse)
 
   // 1. Aufgabe: Alle Attribute zu initialisieren.
   // 2. Aufgabe: Validierung von Input
-  if (name.size() != 0) {
+  if (name.size() == 0) {
     this->name = "Default Name";
   }
 
@@ -92,4 +92,12 @@ void Person::introduce() const {
   cout << "Name: " << name << endl;
   cout << "Alter: " << *alter << endl;
   cout << "Groesse: " << groesse << endl;
+}
+
+Person Person::operator+(const Person &other) {
+  // Aufgabe: combine *this + other (attributes)
+  this->name = this->name + " | " + other.name;
+  *this->alter = *this->alter + *other.alter;
+  this->groesse = this->groesse + other.groesse;
+  return *this;
 }
