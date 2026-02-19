@@ -37,6 +37,21 @@ Person::~Person() {
   // this->groesse
 }
 
+Person &Person::operator=(const Person &other) {
+  if (this != &other) {
+    // guarantee that this != other
+    // 1. Aufgabe: copy ALL attributes from other
+
+    this->name = other.name;
+    delete this->alter;
+
+    this->alter = new int(*other.alter);
+
+    this->groesse = other.groesse;
+  }
+  return *this;
+}
+
 void Person::setAlter(int x) {
   // validierung
   if (x < 0) {

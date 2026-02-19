@@ -19,6 +19,9 @@ public:
   Person(const Person &other); // Copy Constructor
 
   ~Person();
+
+  Person &operator=(const Person &other); // Copy Assignment operator=
+
   void setAlter(int x);
   int getAlter() const;
   int getGroesse() const;

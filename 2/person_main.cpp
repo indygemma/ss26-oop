@@ -15,6 +15,9 @@ int main() {
   Person p2 = Person(*p1); // Copy Constructor required
   Person p3 = Person(p2);
 
+  Person p4 = Person("Mark", 25, 180);
+  p4 = p2; // Copy assignment
+
   delete p1; // destructor call
 
   // p1.alter = 10;
