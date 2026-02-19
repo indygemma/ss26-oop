@@ -34,7 +34,8 @@ void Person::setAlter(int x) {
   }
 
   // x hat einen validen Wert
-  alter = x;
+  // dereferencing required, because of int*
+  *this->alter = x;
 }
 
 void Person::introduce() const {
