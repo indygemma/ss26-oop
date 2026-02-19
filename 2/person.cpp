@@ -21,6 +21,7 @@ Person::Person(string name, int alter, int groesse)
   }
 }
 
+// Copy Constructor
 Person::Person(const Person &other) {
   // 1. Aufgabe: initialization of attributes
   // 2. Aufgabe: copy values from other

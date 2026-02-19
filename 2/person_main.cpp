@@ -13,6 +13,7 @@ int main() {
   p1->introduce();
 
   Person p2 = Person(*p1); // Copy Constructor required
+  Person p3 = Person(p2);
 
   delete p1; // destructor call
 
