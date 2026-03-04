@@ -5,3 +5,5 @@ Mitarbeiter::Mitarbeiter(int gehalt, std::string name)
   // TODO: is 'gehalt' a valid number?
   // TODO: is 'name' a valid name?
 }
+
+Mitarbeiter::~Mitarbeiter() {}
