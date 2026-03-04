@@ -6,7 +6,7 @@
 class Marketing : public Mitarbeiter {
 public:
   Marketing(int gehalt, std::string name);
-  virtual bool work(int hours) override;
+  // virtual bool work(int hours) override;
 };
 
 #endif

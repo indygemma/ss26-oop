@@ -14,8 +14,7 @@ public:
   virtual ~Mitarbeiter(); // als Parentklasse, muss Destruktor als virtual
                           // deklariert werden.
 
-  virtual bool
-  work(int hours) = 0; // = 0 => there is no implementation => abstract
+  virtual bool work(int hours); // = 0 => there is no implementation => abstract
 };
 
 #endif

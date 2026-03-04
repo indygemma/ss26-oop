@@ -1,4 +1,5 @@
 #include "mitarbeiter.h"
+#include <iostream>
 
 Mitarbeiter::Mitarbeiter(int gehalt, std::string name)
     : gehalt(gehalt), name(name) {
@@ -7,3 +8,8 @@ Mitarbeiter::Mitarbeiter(int gehalt, std::string name)
 }
 
 Mitarbeiter::~Mitarbeiter() {}
+
+bool Mitarbeiter::work(int hours) {
+  std::cout << "[Mitarbeiter] work() called with hours: " << hours << std::endl;
+  return true;
+}
