@@ -86,10 +86,33 @@ Aktuell ist `Field` eine einzelne Klasse mit einem `int type`. Die Methoden
 
 **Refaktorisieren Sie `Field` in eine Klassenhierarchie:**
 
-```
-          Field (Basisklasse)
-        /    |       \       \
-EmptyField DangerField WellField RelicField
+```mermaid
+classDiagram
+    Field <|-- EmptyField
+    Field <|-- DangerField
+    Field <|-- WellField
+    Field <|-- RelicField
+
+    class Field {
+        +getSymbol()* char
+        +onEnter(Character &player)* void
+        +~Field()
+    }
+    class EmptyField {
+        +onEnter(Character &player) void
+    }
+    class DangerField {
+        +getSymbol() char
+        +onEnter(Character &player) void
+    }
+    class WellField {
+        +getSymbol() char
+        +onEnter(Character &player) void
+    }
+    class RelicField {
+        +getSymbol() char
+        +onEnter(Character &player) void
+    }
 ```
 
 ### Was zu tun ist
@@ -159,10 +182,29 @@ verwendet eine if-Kette, um den richtigen Namen zurückzugeben.
 
 **Refaktorisieren Sie `Item` in eine Klassenhierarchie:**
 
-```
-          Item (Basisklasse)
-        /       |         \
-  Gauntlets   Boots     Scroll
+```mermaid
+classDiagram
+    Item <|-- Gauntlets
+    Item <|-- Boots
+    Item <|-- Scroll
+
+    class Item {
+        +getName()* string
+        +getAttributeType()* int
+        +~Item()
+    }
+    class Gauntlets {
+        +getName() string
+        +getAttributeType() int
+    }
+    class Boots {
+        +getName() string
+        +getAttributeType() int
+    }
+    class Scroll {
+        +getName() string
+        +getAttributeType() int
+    }
 ```
 
 ### Was zu tun ist
@@ -206,8 +248,8 @@ werden können.
 
 ### Was zu tun ist
 
-1. Ersetzen Sie `int items[3]` durch einen Container für `Item*`-Zeiger
-   (z. B. `std::vector<Item*>`)
+1. Ersetzen Sie `int items[3]` durch ein Array aus `Item*`-Zeigern
+   (z. B. `Item* items[10]`) und einen Zähler für die aktuelle Anzahl
 
 2. Ändern Sie `addItem` so, dass es einen `Item*` entgegennimmt:
    ```cpp
@@ -388,19 +430,6 @@ $ make nachher
 $ ./nachher
 Alle Tests bestanden!
 ```
-
----
-
-## Bewertung
-
-| Aspekt | Bewertung |
-|---|---|
-| Aufgabe 1 — Field-Hierarchie mit virtuellem Destruktor | 25% |
-| Aufgabe 2 — Item-Hierarchie | 20% |
-| Aufgabe 3 — Polymorphes Inventar im Character | 20% |
-| Aufgabe 4 — TrapField + Reflexionsfrage | 10% |
-| Aufgabe 5 — GameWorld mit Speicherverwaltung | 15% |
-| UML-Klassendiagramm (alle Hierarchien) | 10% |
 
 ---
 
