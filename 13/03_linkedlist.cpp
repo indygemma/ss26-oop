@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -29,10 +30,18 @@ int main() {
   LinkedList<int> intList;
   intList.addFirst(3);
   intList.addFirst(2);
+  intList.addLast(6);
   intList.print();
+  // TODO: int operator[](int, int)
+  assert(intList[2] == 6);
+  assert(3 == intList.pop());
   LinkedList<string> stringList;
   stringList.addFirst("World");
   stringList.addFirst("Hello");
+  stringList.addLast("test");
   stringList.print();
+  // TODO: string operator[](string, int)
+  assert(stringList[2] == "test");
+  assert("World" == stringList.pop());
   return 0;
 }
