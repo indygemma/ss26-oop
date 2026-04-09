@@ -64,5 +64,27 @@ int main() {
   }
   cout << endl;
 
+  // SUCHEN
+
+  const vector<int>::iterator it = find_if(
+      numbers.begin(), numbers.end(), [](int x) { return x >= 5 && x < 9; });
+  if (it == numbers.end()) {
+    // NOT FOUND
+    cout << "Number between 5 and 9 NOT found!" << endl;
+  } else {
+    // FOUND
+    cout << "Number between 5 and 9 found" << endl;
+  }
+
+  const vector<int>::iterator it2 =
+      find_if(numbers.begin(), numbers.end(), [](int x) { return x > 10; });
+  if (it2 == numbers.end()) {
+    // NOT FOUND
+    cout << "Number > 10 NOT found!" << endl;
+  } else {
+    // FOUND
+    cout << "Number > 10 found" << endl;
+  }
+
   return 0;
 }
