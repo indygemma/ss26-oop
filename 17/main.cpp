@@ -1,3 +1,4 @@
+#include <chrono>
 #include <iostream>
 #include <mutex>
 #include <string>
@@ -31,6 +32,8 @@ int main() {
   t3.join();
   t4.join();
 
+  const auto start1{chrono::steady_clock::now()};
+
   // dynamic thread definition (n=n_threads)
   vector<thread> threads;
   for (int i = 0; i < n_threads; i++) {
@@ -40,6 +43,12 @@ int main() {
   for (int i = 0; i < n_threads; i++) {
     threads[i].join();
   }
+
+  const auto end1{chrono::steady_clock::now()};
+  const auto elapsed1 =
+      chrono::duration_cast<chrono::microseconds>(end1 - start1).count();
+
+  cout << "Time elapsed: " << elapsed1 << endl;
 
   return 0;
 }
