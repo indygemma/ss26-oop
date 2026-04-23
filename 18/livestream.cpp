@@ -11,9 +11,9 @@ void LiveStream::start() {
   // DONE: implement Livestream start
   cout << name << " starts with " << viewerCount << " initial viewers." << endl;
   size_t i = 0;
-  size_t maxViewerCount = viewerCount;
+  int maxViewerCount = viewerCount;
   while (viewerCount > 0) {
-    cout << name << "running with " << viewerCount << " active viewers."
+    cout << name << " running with " << viewerCount << " active viewers."
          << endl;
     viewerCount = viewerCount + viewerFluctuation - i;
     if (viewerCount > maxViewerCount) {
