@@ -4,7 +4,7 @@
 #include <string>
 
 class Stream {
-private:
+protected:
   std::string name;
 
 public:

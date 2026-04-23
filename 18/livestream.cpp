@@ -1,4 +1,6 @@
 #include "livestream.h"
+#include <iostream>
+using namespace std;
 
 LiveStream::LiveStream(std::string name, int initialViewers,
                        int viewerFluctuation)
@@ -7,4 +9,5 @@ LiveStream::LiveStream(std::string name, int initialViewers,
 
 void LiveStream::start() {
   // TODO: implement Livestream start
+  cout << name << " starts with " << viewerCount << " initial viewers." << endl;
 }
