@@ -3,9 +3,13 @@
 Host::Host() {}
 
 void Host::addStream(Stream *stream) {
-  // TODO: implement addStream
+  // DONE: implement addStream
+  streams.push_back(stream);
 }
 
 void Host::startAllStreams() {
-  // TODO: implement startAllStreams
+  // DONE: implement startAllStreams
+  for (Stream *stream : streams) {
+    stream->start();
+  }
 }

@@ -3,8 +3,8 @@
 
 int main() {
 
-  LiveStream l1("Formula X", 10, 30);
-  l1.start();
+  // LiveStream l1("Formula X", 10, 30);
+  // l1.start();
 
   Host host;
   host.addStream(new LiveStream("Formula 1", 100, 300));
