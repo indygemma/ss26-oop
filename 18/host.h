@@ -9,6 +9,9 @@ private:
   std::vector<Stream *> streams;
 
 public:
+  Host();
+  void addStream(Stream *stream);
+  void startAllStreams();
 };
 
 #endif
