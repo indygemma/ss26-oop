@@ -10,6 +10,7 @@ private:
 
 public:
   Host();
+  ~Host();
   void addStream(Stream *stream);
   void startAllStreams();
 };

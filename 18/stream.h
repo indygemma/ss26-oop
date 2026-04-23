@@ -9,6 +9,7 @@ protected:
 
 public:
   Stream(std::string name);
+  virtual ~Stream() = default;
   virtual void start() = 0;
 };
 

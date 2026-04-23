@@ -2,6 +2,12 @@
 
 Host::Host() {}
 
+Host::~Host() {
+  for (Stream *stream : streams) {
+    delete stream;
+  }
+}
+
 void Host::addStream(Stream *stream) {
   // DONE: implement addStream
   streams.push_back(stream);
