@@ -1,4 +1,5 @@
 #include "host.h"
+#include <thread>
 
 Host::Host() {}
 
@@ -13,9 +14,16 @@ void Host::addStream(Stream *stream) {
   streams.push_back(stream);
 }
 
+void start_stream(Stream *stream) { stream->start(); }
+
 void Host::startAllStreams() {
   // DONE: implement startAllStreams
+  std::vector<std::thread> threads;
   for (Stream *stream : streams) {
-    stream->start();
+    threads.push_back(std::thread(start_stream, stream));
+  }
+
+  for (size_t i = 0; i < threads.size(); i++) {
+    threads[i].join();
   }
 }
